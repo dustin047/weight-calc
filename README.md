@@ -1,3 +1,7 @@
+
+## https://howmuchyalift.com
+This site is hosted on Netlify. It is also using a free www SSL cert from Let's Encrypt!
+
 # WeightCalc
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
