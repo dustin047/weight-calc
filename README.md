@@ -1,5 +1,5 @@
 
-## https://howmuchyalift.com
+## https://www.howmuchyalift.com
 This site is hosted on Netlify. It is also using a free www SSL cert from Let's Encrypt!
 
 # WeightCalc
