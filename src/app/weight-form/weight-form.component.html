@@ -1,0 +1,39 @@
+<div class="container">
+
+  <form>
+    <div class="form-group">
+      <label for="bar">Bar Weight</label>
+      <input type="number" class="form-control" id="bar" required
+             [(ngModel)]="bar" name="barWeight">
+    </div>
+
+    <div class="form-group">
+      <label for="total">Total Weight</label>
+      <input type="number" min="0" max="2000" class="form-control" id="total" required
+             [(ngModel)]="total" name="totalWeight">
+    </div>
+  </form>
+
+    <div class="text-dark bg-light jumbotron" *ngIf="getDisplayInformation()">
+      <span class="badge badge-dark" *ngIf="has45s()"> {{totalWeights.fortyFives}} </span>  <img src="assets/45.png" *ngIf="has45s()" style="width:100px; height:100px" title="45lb plate" alt="45lb plate">
+      <span class="badge badge-dark" *ngIf="has35s()"> {{totalWeights.thirtyFives}} </span> <img src="assets/35.png" *ngIf="has35s()" style="width:85px; height:85px" title="35lb plate" alt="35lb plate">
+      <span class="badge badge-dark" *ngIf="has25s()"> {{totalWeights.twentyFives}} </span> <img src="assets/25.png" *ngIf="has25s()" style="width:65px; height:65px" title="25lb plate" alt="25lb plate">
+      <span class="badge badge-dark" *ngIf="has10s()"> {{totalWeights.tens}} </span>        <img src="assets/10.png" *ngIf="has10s()" style="width:50px; height:50px" title="10lb plate" alt="l0lb plate">
+      <span class="badge badge-dark" *ngIf="has5s()"> {{totalWeights.fives}} </span>        <img src="assets/5.png" *ngIf="has5s()" style="width:50px; height:50px" title="5lb plate" alt="5lb plate">
+      <span class="badge badge-dark"  *ngIf="has2and5s()"> {{totalWeights.twoAndHalf}} </span> <img src="assets/2.5.png" *ngIf="has2and5s()" style="width:50px; height:50px" title="2.5lb plate" alt="2.5lb plate">
+    </div>
+
+<div class="text-dark bg-light" *ngIf="!totalIsGreaterThanBar()">
+    <h6> Total Weight can't be less than the bars weight! </h6>
+  </div>
+  <div class="text-dark bg-light" *ngIf="!barIsGreaterThanZero()">
+    <h6> Bar weight cannot be less than zero! </h6>
+  </div>
+  <div class="text-dark bg-light" *ngIf="!totalWeightIsValid()">
+    <h6> Total weight must be divisible by 5! </h6>
+  </div>
+  <div class="text-dark bg-light" *ngIf="!totalWeightIsLessThanMax()">
+    <h6> Total weight is too large! </h6>
+  </div>
+
+</div>
